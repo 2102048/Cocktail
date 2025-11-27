@@ -11,7 +11,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   return (
-    <BrowserRouter>
+  <BrowserRouter basename="/Cocktail">
       <Navbar cartCount={cart.length} />
 
       <Routes>
