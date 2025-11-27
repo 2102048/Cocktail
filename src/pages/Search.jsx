@@ -11,7 +11,6 @@ function Search(props) {
 
   const navigate = useNavigate();
 
-  // fetch cocktails
   async function fetchCocktails() {
 
     if (letter.length !== 1) {
@@ -32,13 +31,11 @@ function Search(props) {
     }
   }
 
-  // add selected drink to cart
   function addToCart(drink) {
     const newCart = [...cart, drink];
     setCart(newCart);
   }
 
-  // open details page
   function openDetails(id) {
     navigate("/cocktail/" + id);
   }
@@ -58,9 +55,11 @@ function Search(props) {
           placeholder="Enter first letter..."
           className="border p-2 rounded-md w-40 text-center"
           value={letter}
-          onChange={function (e) {
-            setLetter(e.target.value);
-          }}
+          onChange={(e) => {
+  const value = e.target.value;
+  setLetter(value.slice(0, 1)); 
+}}
+
         />
 
         <button
