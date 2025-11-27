@@ -15,7 +15,7 @@ function App() {
       <Navbar cartCount={cart.length} />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="/search" element={<Search cart={cart} setCart={setCart} />} />
         <Route path="/cocktail/:id" element={<CocktailDetails cart={cart} setCart={setCart} />} />
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
